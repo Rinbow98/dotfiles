@@ -1,27 +1,169 @@
-syntax enable			    " Enables syntax highlighting for various file types
-filetype plugin indent on	" Enables file type detection, plugin loading, and automatic indentation
+"==============================
+" vim-plug
+"==============================
+call plug#begin()
+Plug 'menisadi/kanagawa.vim'
+Plug 'tpope/vim-commentary'
+call plug#end()
 
-set t_Co=256
-set encoding=utf-8
+"==============================
+" 1. General Settings
+"==============================
+set nocompatible              " Disable Vi compatibility
+set encoding=utf-8            " Set UTF-8 as default encoding
+set fileencoding=utf-8
+set termencoding=utf-8
+set history=1000              " Command history size
+set autoread                  " Auto reload files changed outside Vim
+set hidden                    " Allow switching buffers without saving
+set clipboard+=unnamedplus    " Use system clipboard if available
 
-set clipboard=unnamedplus,unnamed,autoselect	" Sync clipboard
+if has('mouse')
+  set mouse=a                 " Enable mouse support
+endif
 
-set nocompatible	" Disables compatibility with vi, allowing modern Vim features.
+syntax enable                 " Enable syntax highlighting
+filetype plugin indent on     " Enable filetype detection and indentation
 
-set number		    " Show current line number
-set relativenumber	" Show relative line numbers
+"==============================
+" 2. User Interface
+"==============================
+set number                    " Show line numbers
+set relativenumber            " Relative numbers for motion
+set cursorline                " Highlight current line
+set showcmd                   " Show incomplete commands
+set showmode                  " Display current mode
+set ruler                     " Show line and column number
+set laststatus=2              " Always show statusline
+set wildmenu                  " Command-line completion enhanced
+set showmatch                 " Highlight matching brackets
+set scrolloff=6               " Keep n lines visible when scrolling
 
-set autoindent		" Enable automatic indentation
-set smartindent		" Enable smart indentation
+if has('gui_running')
+  " GUI Cursor Blink and shape based on mode
+  set guicursor="n-v-c:block",
+                \"i-ci-ve:ver25",
+                \"r-cr:hor20",
+                \"o:hor50",
+                \"a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor",
+                \"sm:block-blinkwait175-blinkoff150-blinkon175"
+elseif exists('$TERM')
+  " Terminal cursor shape (for DECSCUSR-compatible terminals)
+    let &t_EI = "\e[2 q"  " Normal: block
+    let &t_SI = "\e[6 q"  " Insert: beam
+    let &t_SR = "\e[4 q"  " Replace: underline
+endif
 
-set smarttab
-set expandtab
+"==============================
+" 3. File Handling
+"==============================
+set backup                    " Keep backup files
+set backupdir^=~/.vim/backups/
+set directory^=~/.vim/swaps/
+set undodir^=~/.vim/undo/
+set undofile                  " Persistent undo
+set autoread                  " Reload changed files
+set confirm                   " Confirm before quitting unsaved files
+set nobackup                  " Disable old backup style
+
+if !isdirectory(expand('~/.vim/backups'))
+  call mkdir('~/.vim/backups', 'p')
+endif
+if !isdirectory(expand('~/.vim/swaps'))
+  call mkdir('~/.vim/swaps', 'p')
+endif
+if !isdirectory(expand('~/.vim/undo'))
+  call mkdir('~/.vim/undo', 'p')
+endif
+
+"==============================
+" 4. Indentation & Formatting
+"==============================
+set autoindent
+set smartindent
+set expandtab                 " Use spaces instead of tabs
 set tabstop=2
-set softtabstop=2
 set shiftwidth=2
+set softtabstop=2
+set smarttab
+set breakindent               " Preserve indent on wrapped lines
+set linebreak                 " Don't break words when wrapping
+set formatoptions+=j          " Remove comment leader when joining lines
 
-set nowrap
+"==============================
+" 5. Search & Replace
+"==============================
+set ignorecase                " Ignore case in search
+set smartcase                 " But respect case if capital letters present
+set hlsearch                  " Highlight matches
+set incsearch                 " Show matches as you type
+set gdefault                  " Default to global substitution
 
-set mouse=a		    " Enables mouse support in all modes
-set undofile		" Persists undo history across Vim sessions
-set scrolloff=8		" Keeps n lines of context above and below the cursor when scrolling
+"==============================
+" 6. Appearance & Colors
+"==============================
+set background=dark
+if has('termguicolors')
+  set termguicolors
+endif
+colorscheme kanagawa
+
+"==============================
+" 7. Key Mappings (non-destructive)
+"==============================
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+
+let mapleader=" "             " Use space as leader key
+
+" Easier window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Quick action
+nnoremap <C-s> :w<CR>         " save
+nnoremap <leader>q :q<CR>     " quit
+nnoremap <C-a> ggVG           " select all
+
+" Search with highlight clear shortcut
+nnoremap <leader>, :nohlsearch<CR>
+
+" Toggle relative line numbers
+nnoremap <leader>rn :set relativenumber!<CR>
+
+" Easy move on insert mode
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+
+"==============================
+" 8. Cross-Platform Tweaks
+"==============================
+if has('macunix')
+  set clipboard=unnamedplus
+elseif has('unix')
+  set clipboard=unnamedplus
+elseif has('win32') || has('win64')
+  set clipboard=unnamed
+endif
+
+"==============================
+" 9. Quality of Life Enhancements
+"==============================
+set updatetime=300            " Faster updates (useful for plugins)
+set timeoutlen=500            " Shorter key timeout
+set shortmess+=c              " Reduce command-line noise
+set signcolumn=yes            " Always show sign column
+
+" Automatically resize splits when window size changes
+autocmd VimResized * wincmd =
+
+" Restore cursor to last position when reopening file
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line('$') | exe "normal! g'\"" | endif
+
+"==============================
+" End of Configuration
+"==============================
+
