@@ -23,8 +23,13 @@ let g:airline#extensions#tabline#enabled=1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-let g:airline_symbols.colnr = ' ㏇:'
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.linenr = ' 󰇙 '
 let g:airline_symbols.maxlinenr = ' '
+let g:airline_symbols.colnr = '󰇘 '
 
 "==============================
 " 1. General Settings
@@ -36,7 +41,7 @@ set termencoding=utf-8
 set history=1000              " Command history size
 set autoread                  " Auto reload files changed outside Vim
 set hidden                    " Allow switching buffers without saving
-set clipboard+=unnamedplus    " Use system clipboard if available
+set clipboard+=unnamed        " Use system clipboard if available
 
 if has('mouse')
   set mouse=a                 " Enable mouse support
@@ -169,11 +174,11 @@ inoremap ` ``<Left>
 " 8. Cross-Platform Tweaks
 "==============================
 if has('macunix')
-  set clipboard=unnamedplus
+  set clipboard+=unnamedplus
 elseif has('unix')
-  set clipboard=unnamedplus
+  set clipboard+=unnamedplus
 elseif has('win32') || has('win64')
-  set clipboard=unnamed
+  set clipboard+=unnamed
 endif
 
 "==============================
