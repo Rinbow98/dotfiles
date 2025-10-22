@@ -41,7 +41,7 @@ set termencoding=utf-8
 set history=1000              " Command history size
 set autoread                  " Auto reload files changed outside Vim
 set hidden                    " Allow switching buffers without saving
-set clipboard+=unnamed        " Use system clipboard if available
+set clipboard=unnamed,unnamedplus,autoselect,autoselectplus " Use system clipboard if available
 
 if has('mouse')
   set mouse=a                 " Enable mouse support
@@ -171,18 +171,7 @@ inoremap ' ''<Left>
 inoremap ` ``<Left>
 
 "==============================
-" 8. Cross-Platform Tweaks
-"==============================
-if has('macunix')
-  set clipboard+=unnamedplus
-elseif has('unix')
-  set clipboard+=unnamedplus
-elseif has('win32') || has('win64')
-  set clipboard+=unnamed
-endif
-
-"==============================
-" 9. Quality of Life Enhancements
+" 8. Quality of Life Enhancements
 "==============================
 set updatetime=300            " Faster updates (useful for plugins)
 set timeoutlen=500            " Shorter key timeout
