@@ -1,10 +1,30 @@
 "==============================
 " vim-plug
+"
+" Installation
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "==============================
 call plug#begin()
 Plug 'menisadi/kanagawa.vim'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'frazrepo/vim-rainbow'
 call plug#end()
+
+" Auto install plugin when vim start
+" autocmd VimEnter * ++once PlugInstall
+
+" vim-ariline
+let g:airline_theme='deus'      " deus bubblegum raven
+let g:airline#extensions#tabline#enabled=1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.colnr = ' ㏇:'
+let g:airline_symbols.maxlinenr = ' '
 
 "==============================
 " 1. General Settings
@@ -49,9 +69,9 @@ if has('gui_running')
                 \"sm:block-blinkwait175-blinkoff150-blinkon175"
 elseif exists('$TERM')
   " Terminal cursor shape (for DECSCUSR-compatible terminals)
-    let &t_EI = "\e[2 q"  " Normal: block
-    let &t_SI = "\e[6 q"  " Insert: beam
-    let &t_SR = "\e[4 q"  " Replace: underline
+  let &t_EI = "\e[2 q"  " Normal: block
+  let &t_SI = "\e[6 q"  " Insert: beam
+  let &t_SR = "\e[4 q"  " Replace: underline
 endif
 
 "==============================
@@ -111,9 +131,19 @@ colorscheme kanagawa
 "==============================
 " 7. Key Mappings (non-destructive)
 "==============================
+" :W sudo saves the file
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
-let mapleader=" "             " Use space as leader key
+" alias save quit typo
+:command WQ wq
+:command Wq wq
+
+" Use space as leader key
+let mapleader=" "
+
+" Quick action
+nnoremap <leader>q :q<CR>     " quit
+nnoremap <C-s> :w<CR>         " save
 
 " Easier window navigation
 nnoremap <C-h> <C-w>h
@@ -121,22 +151,19 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Quick action
-nnoremap <C-s> :w<CR>         " save
-nnoremap <leader>q :q<CR>     " quit
-nnoremap <C-a> ggVG           " select all
+" Buffer control
+nnoremap <leader>bd :bdelete<CR>
+nnoremap <S-h> :bprevious<CR>
+nnoremap <S-l> :bnext<CR>
 
-" Search with highlight clear shortcut
-nnoremap <leader>, :nohlsearch<CR>
-
-" Toggle relative line numbers
-nnoremap <leader>rn :set relativenumber!<CR>
-
-" Easy move on insert mode
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
+" Double Quote
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+inoremap < <><Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap ` ``<Left>
 
 "==============================
 " 8. Cross-Platform Tweaks
@@ -166,4 +193,3 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line('$') | exe "norm
 "==============================
 " End of Configuration
 "==============================
-
