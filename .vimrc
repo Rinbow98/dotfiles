@@ -10,7 +10,7 @@ if !filereadable(expand('~/.vim/autoload/plug.vim'))
 endif
 
 # Run PlugInstall at first time
-if !isdirectory(expand('~/.vim/plugged/'))
+if !isdirectory(expand('~/.vim/plugged'))
   autocmd VimEnter * ++once PlugInstall
 endif
 
@@ -139,7 +139,8 @@ colorscheme kanagawa              # Apply Kanagawa colorscheme
 # Key Mappings (Safe Defaults)
 #==============================
 command! W execute 'w !sudo tee % > /dev/null' | edit! # Save as root
-command! WQ wq                                         # Write & quit
+command! Q q                                           # Quit alias
+command! WQ wq                                         # Write & quit alias
 command! Wq wq                                         # Write & quit alias
 
 g:mapleader = ' '                                      # Space as leader key
