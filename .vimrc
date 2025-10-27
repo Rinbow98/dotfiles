@@ -9,6 +9,11 @@ if !filereadable(expand('~/.vim/autoload/plug.vim'))
   system('curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
 endif
 
+# Run PlugInstall at first time
+if !isdirectory(expand('~/.vim/plugged/'))
+  autocmd VimEnter * ++once PlugInstall
+endif
+
 # Begin plugin section
 plug#begin()
   Plug 'menisadi/kanagawa.vim'     # Kanagawa colorscheme
