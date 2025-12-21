@@ -1,0 +1,626 @@
+format = """
+$os\
+$username\
+$hostname\
+$localip\
+
+$directory\
+
+$fill\
+
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$gleam\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$quarto\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$typst\
+$vlang\
+$vagrant\
+$zig\
+
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+
+$shlvl\
+
+$docker_context\
+
+$singularity\
+$kubernetes\
+
+$vcsh\
+$fossil_branch\
+$fossil_metrics\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$pijul_channel\
+
+$cmd_duration\
+$time\
+
+$line_break\
+
+$shell\
+$character\
+"""
+
+
+palette = 'custom_colors'
+
+[palettes.custom_colors]
+color_os = '#51a2da'
+color_win = '#0078d4'
+color_win_dark = '#14abcd'
+color_debian = '#a80030'
+color_ubuntu = '#E95420'
+color_fedora = '#51a2da'
+color_arch = '#1793d1'
+color_pop = '#66afc0'
+
+color_ssh = '#ab9294'
+color_shlvl = '#ab9294'
+color_container = '#ab9294'
+color_program_language = '#7a81a8'
+color_package_manager = '#a0b9bc'
+color_version_control = '#b1ad7e'
+color_time = '#bbb6c5'
+color_shell = '#bbb6c5'
+
+# Pantone Color of the Year 2018
+color_ultra_violet = '#6e5b98'
+
+color_ether = '#a0b9bc'
+color_weeping_willow = '#b1ad7e'
+color_tradewinds = '#869098'
+
+color_misty_lilac = '#bbb6c5'
+color_deauville_mauve = '#ab9294'
+
+color_dusty_lavender = '#9d789b'
+color_lavender_violet = '#7a81a8'
+
+color_jacaranda = '#868fc7'
+color_rhapsody = '#a28ba9'
+
+
+[os]
+disabled = false
+style = 'color_os'
+format = '[$symbol]($style)'
+
+[os.symbols]
+Windows = ' '
+Ubuntu = '󰕈 '
+SUSE = ' '
+Raspbian = '󰐿 '
+Mint = '󰣭 '
+Macos = '󰀵 '
+Manjaro = ' '
+Linux = '󰌽 '
+Gentoo = '󰣨 '
+Fedora = '󰣛 '
+Alpine = ' '
+Amazon = ' '
+Android = ' '
+Arch = '󰣇 '
+Artix = '󰣇 '
+EndeavourOS = ' '
+CentOS = ' '
+Debian = '󰣚 '
+Redhat = '󱄛 '
+RedHatEnterprise = '󱄛 '
+Pop = ' '
+NixOS = ' '
+
+
+[username]
+disabled = false
+style_root = 'bright-yellow'
+format = '[ $user]($style)'
+aliases = { 'Administrator' = '󰢏 ' }
+
+
+[hostname]
+disabled = false
+ssh_symbol = ' '
+style = 'color_ssh'
+format = '[@$hostname]($style)'
+
+[localip]
+disabled = true
+style = 'color_ssh'
+format = '[@$localipv4]($style)'
+
+
+[directory]
+disabled = false
+style = 'yellow'
+read_only = '󰌾 '
+read_only_style = 'red'
+format = '[   ]($style)[$path ]()[$read_only]($read_only_style)'
+truncate_to_repo = true
+truncation_length = 6
+truncation_symbol = '…/'
+
+[directory.substitutions]
+'Documents' = '󰈙 '
+'Downloads' = ' '
+'Music' = ' '
+'Pictures' = ' '
+'Developer' = '󰲋 '
+
+
+[fill]
+# disabled = true
+symbol = '    '
+
+
+# Programming Languages
+
+[c]
+# disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[cmake]
+# disabled = true
+symbol = '󰔷 '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[cobol]
+disabled = true
+symbol = '󱋾 '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[daml]
+disabled = true
+symbol = '󰲇 '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[dart]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[deno]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[dotnet]
+disabled = true
+symbol = '󰪮 '
+style = 'color_program_language'
+format = '[ $symbol($version)(󰓾 $tfm)]($style)'
+
+[elixir]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version \(OTP $otp_version\))]($style)'
+
+[elm]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[erlang]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[fennel]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[gleam]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[golang]
+# disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[guix_shell]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[haskell]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[haxe]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[helm]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[java]
+# disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[julia]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[kotlin]
+# disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[gradle]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[lua]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[nim]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[nodejs]
+# disabled = true
+symbol = '󰎙 '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[ocaml]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)(\($switch_indicator$switch_name\))]($style)'
+
+[opa]
+disabled = true
+symbol = 'OPA '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[perl]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[php]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[pulumi]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($username@)$stack]($style)'
+
+[purescript]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[python]
+# disabled = true
+symbol = '󰌠 '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[quarto]
+disabled = true
+symbol = '⨁ '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[raku]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version-$vm_version)]($style)'
+
+[rlang]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[ruby]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[rust]
+# disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[scala]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[solidity]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[swift]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[terraform]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)$workspace]($style)'
+
+[typst]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[vlang]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[vagrant]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+[zig]
+disabled = true
+symbol = ' '
+style = 'color_program_language'
+format = '[ $symbol($version)]($style)'
+
+
+# Package Managers
+
+[buf]
+disabled = true
+symbol = '󰚉 '
+style = 'color_package_manager'
+format = '[ $symbol($version)]($style)'
+
+[nix_shell]
+disabled = true
+symbol = ' '
+style = 'color_package_manager'
+format = '[ $symbol$state( \($name\))]($style)'
+
+[conda]
+# disabled = true
+symbol = ' '
+style = 'color_package_manager'
+format = '[ $symbol$environment]($style)'
+
+[meson]
+# disabled = true
+symbol = '󰯙 '
+style = 'color_package_manager'
+format = '[ $symbol$project]($style)'
+
+[spack]
+disabled = true
+symbol = ' '
+style = 'color_package_manager'
+format = '[ $symbol$environment]($style)'
+
+
+# Containers
+
+[shlvl]
+disabled = true
+symbol = '󰹹 '
+style = 'color_shlvl'
+format = '[ $symbol$shlvl]($style)'
+
+
+[docker_context]
+disabled = false
+symbol = ' '
+style = 'bold blue'
+format = '[ $symbol$context]($style)'
+
+
+[singularity]
+disabled = true
+symbol = ' '
+style = 'color_container'
+format = '[ $symbol\[$env\]]($style)'
+
+[kubernetes]
+disabled = true
+symbol = '󱃾 '
+style = 'color_container'
+format = '[ $symbol$context( \($namespace\))]($style)'
+
+
+# Version Control
+
+[vcsh]
+disabled = true
+symbol = ' '
+style = 'color_version_control'
+format = '[ $symbol$repo]($style)'
+
+
+[fossil_branch]
+disabled = true
+symbol = ' '
+style = 'color_version_control'
+format = '[ $symbol$branch]($style)'
+
+[fossil_metrics]
+disabled = true
+format = '( [+$added]($added_style))( [-$deleted]($deleted_style))'
+
+
+[git_branch]
+disabled = false
+symbol = ' '
+style = 'color_version_control'
+format = '[ $symbol$branch]($style)'
+
+[git_commit]
+disabled = false
+only_detached = false 
+style = 'color_version_control'
+format = '[ $hash]($style)'
+
+[git_state]
+disabled = false
+style = 'color_version_control'
+format = '[ \($state( $progress_current/$progress_total)]\)]($style)'
+
+[git_metrics]
+disabled = true
+format = '( [+$added]($added_style))( [-$deleted]($deleted_style))'
+
+[git_status]
+disabled = false
+style = 'color_version_control'
+format = '[( $all_status$ahead_behind)]($style)'
+
+[hg_branch]
+disabled = true
+symbol = ' '
+style = 'color_version_control'
+format = '[ $symbol$branch(:$topic)]($style) '
+
+[pijul_channel]
+disabled = true
+symbol = ' '
+style = 'color_version_control'
+format = '[ $symbol$channel]($style)'
+
+
+[cmd_duration]
+disabled = false
+style = 'color_time'
+format = '[ 󰚭 $duration]($style)'
+
+[time]
+disabled = false
+time_format = '%T'
+style = 'color_time'
+format = '[  $time]($style)'
+
+
+[line_break]
+disabled = false
+
+
+[shell]
+disabled = false
+bash_indicator = '󰯮 '
+fish_indicator = ' '
+zsh_indicator = '󰰶 '
+powershell_indicator = ' '
+ion_indicator = '󰰃 '
+elvish_indicator = '󰯷 '
+tcsh_indicator = '󰰤 '
+xonsh_indicator = '󰰰 '
+cmd_indicator = ' '
+nu_indicator = '𝛎 '
+unknown_indicator = ' '
+style = 'color_shell'
+format = '[$indicator ]($style)'
+
+[character]
+disabled = false
+format = '$symbol '
+success_symbol = '[ ](color_ultra_violet)'
+error_symbol = '[ ](red)'
+
