@@ -1,0 +1,3 @@
+# Zsh env entry point
+
+source "$HOME/.config/zsh/env.zsh"

@@ -1,0 +1,17 @@
+# ================================
+# Interactive shell guard
+# ================================
+[[ $- != *i* ]] && return
+
+# Main Zsh entry point
+ZSH_CONFIG="$HOME/.config/zsh"
+
+source "$ZSH_CONFIG/lib/util.zsh"
+source "$ZSH_CONFIG/alias.zsh"
+source "$ZSH_CONFIG/option.zsh"
+source "$ZSH_CONFIG/keybind.zsh"
+source "$ZSH_CONFIG/plugin.zsh"
+source "$ZSH_CONFIG/tool.zsh"
+
+# Show system info at shell startup (optional)
+show_macchina
