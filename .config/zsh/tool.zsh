@@ -22,7 +22,7 @@ tool_init starship 'eval "$(starship init zsh)"'
 tool_init zoxide 'eval "$(zoxide init zsh)"'
 
 # Node version manager
-tool_init fnm 'eval "$(fnm env --use-on-cd)"'
+# tool_init fnm 'eval "$(fnm env --use-on-cd)"'
 
 # System info (optional)
 tool_init macchina 'alias sysinfo="macchina -t astatine"'

@@ -25,9 +25,6 @@ setopt INC_APPEND_HISTORY
 # Remove duplicate commands from history
 setopt HIST_IGNORE_ALL_DUPS
 
-# Remove leading/trailing blanks
-setopt HIST_REDUCE_BLANKS
-
 # Ignore commands that start with space
 setopt HIST_IGNORE_SPACE
 
@@ -91,6 +88,12 @@ setopt INTERACTIVE_COMMENTS
 # Improves sanity
 setopt NO_BEEP
 
+# Words seperate like bash
+autoload -U select-word-style && select-word-style bash
+
+# Edit command line
+autoload -z edit-command-line
+
 # --------- Misc usability ---------
 
 # Expand aliases before completion
@@ -99,5 +102,6 @@ setopt COMPLETE_ALIASES
 
 # --------- Autoload ---------
 
-# completion
+# Auto completion
 autoload -Uz compinit && compinit -C
+
