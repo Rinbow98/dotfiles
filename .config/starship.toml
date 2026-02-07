@@ -204,6 +204,7 @@ NixOS = '[ ](#7DB7E0)' # other: (#4F74BD)
 
 [shlvl]
 disabled = false
+threshold = 2
 symbol = ''
 style = 'color_shlvl'
 format = '[ $symbol$shlvl]($style)'
