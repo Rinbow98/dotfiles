@@ -1,5 +1,8 @@
 format = """
 $os\
+
+$shlvl\
+
 $username\
 $hostname\
 $localip\
@@ -60,8 +63,6 @@ $conda\
 $meson\
 $spack\
 
-$shlvl\
-
 $docker_context\
 
 $singularity\
@@ -91,81 +92,134 @@ $character\
 palette = 'custom_colors'
 
 [palettes.custom_colors]
-color_os = '#51a2da'
-color_win = '#0078d4'
-color_win_dark = '#14abcd'
-color_debian = '#a80030'
-color_ubuntu = '#E95420'
-color_fedora = '#51a2da'
-color_arch = '#1793d1'
-color_pop = '#66afc0'
+color_shlvl = '#F0D9CC'
+color_user = '#F5EBC8'
+color_ssh = '#EBD8DC'
 
-color_ssh = '#ab9294'
-color_shlvl = '#ab9294'
-color_container = '#ab9294'
-color_program_language = '#7a81a8'
-color_package_manager = '#a0b9bc'
-color_version_control = '#b1ad7e'
-color_time = '#bbb6c5'
-color_shell = '#bbb6c5'
+color_fill = '#D5D5D7'
+
+color_program_language = '#D4E4F1'
+color_package_manager = '#C9D3C0'
+color_container = '#CBE5E0'
+color_version_control = '#F5EBC8'
+color_duration = '#D1C9FA'
+color_time = '#DBD3DC'
+
+color_shell = '#F0EFEB'
+color_character = '#6868AC'
+
+
+# Pantone Color of the Year 2026
+color_cloud_dancer = '#F0EFEB'
+
+color_lemon_icing = '#F5EBC8'
+color_nimbus_cloud = '#D5D5D7'
+color_raindrop_on_roses = '#EBD8DC'
+color_ice_melt = '#D4E4F1'
+color_peach_dust = '#F0D9CC'
+color_almost_aqua = '#C9D3C0'
+color_orchid_tint = '#DBD3DC'
+color_light_purple = '#D1C9FA'
+color_light_teal = '#CBE5E0'
+
+color_iris_orchid = '#A867A4'
+color_capri = '#45BBCA'
+color_kiwi_colada = '#BDCA23'
+color_sunny_lime = '#E0EE88'
+color_bright_marigold = '#FF8E00'
+color_paradise_pink = '#E4465E'
+color_blazing_yellow = '#FEE816'
+
+color_stretch_limo = '#2B2C30'
+# end of 2026
+
+
+# Pantone Color of the Year 2022
+color_very_peri = '#6868AC'
+
+color_burnished_lilac = '#C6AAAF'
+color_lotus = '#E3C1BE'
+color_muted_clay = '#D3927D'
+color_dried_moss = '#CDB97D'
+color_granite_green = '#85A094'
+color_hawthorn_rose = '#894B5D'
+color_elderberry = '#A0838F'
+
+color_anthracite = '#29282D'
+color_volcanic_glass = '#625C60'
+color_deep_taupe = '#7D6461'
+color_plaza_taupe = '#AEA392'
+color_white_sand = '#DBD3CF'
+color_petrified_oak = '#8E7960'
+color_cloud_dancer_1 = '#F1EDE9'
+# end of 2022
+
 
 # Pantone Color of the Year 2018
-color_ultra_violet = '#6e5b98'
+color_ultra_violet = '#6E5B98'
 
-color_ether = '#a0b9bc'
-color_weeping_willow = '#b1ad7e'
+color_ether = '#A0B9BC'
+color_weeping_willow = '#B1AD7E'
 color_tradewinds = '#869098'
 
-color_misty_lilac = '#bbb6c5'
-color_deauville_mauve = '#ab9294'
+color_misty_lilac = '#BBB6C5'
+color_deauville_mauve = '#AB9294'
 
-color_dusty_lavender = '#9d789b'
-color_lavender_violet = '#7a81a8'
+color_dusty_lavender = '#9D789B'
+color_lavender_violet = '#7A81A8'
 
-color_jacaranda = '#868fc7'
-color_rhapsody = '#a28ba9'
+color_jacaranda = '#868FC7'
+color_rhapsody = '#A28BA9'
+# end of 2018
 
 
 [os]
 disabled = false
-style = 'color_os'
-format = '[$symbol]($style)'
+format = '$symbol'
 
 [os.symbols]
-Windows = ' '
-Ubuntu = '󰕈 '
-SUSE = ' '
-Raspbian = '󰐿 '
-Mint = '󰣭 '
-Macos = '󰀵 '
-Manjaro = ' '
-Linux = '󰌽 '
-Gentoo = '󰣨 '
-Fedora = '󰣛 '
-Alpine = ' '
-Amazon = ' '
-Android = ' '
-Arch = '󰣇 '
-Artix = '󰣇 '
-EndeavourOS = ' '
-CentOS = ' '
-Debian = '󰣚 '
-Redhat = '󱄛 '
-RedHatEnterprise = '󱄛 '
-Pop = ' '
-NixOS = ' '
+Windows = '[ ](#14ABCD)' # light: (#0078D4), dark: (#14ABCD)
+Ubuntu = '[󰕈 ](#E95420)'
+SUSE = '[ ](#30BA78)'
+Raspbian = '[ ](#CD2255)'
+Mint = '[󰣭 ](#8CBF4B)'
+Macos = '[󰀵 ](white)'
+Manjaro = '[ ](#36BFA4)'
+Linux = '[ ](white)'
+Gentoo = '[󰣨 ](#DDDFFF)'
+Fedora = '[󰣛 ](#51A2DA)'
+Alpine = '[ ](#0E597F)'
+Amazon = '[ ](white)'
+Android = '[ ](#34A853)'
+Arch = '[󰣇 ](#1793d1)'
+Artix = '[ ](#12A0CC)'
+EndeavourOS = '[ ](#7F3FBF)'
+CentOS = '[ ](#A34E8D)'
+Debian = '[󰣚 ](#A80030)'
+Redhat = '[󱄛 ](#EE0000)'
+RedHatEnterprise = '[󱄛 ](#EE0000)'
+Pop = '[ ](#66AFC0)'
+NixOS = '[ ](#7DB7E0)' # other: (#4F74BD)
+
+
+[shlvl]
+disabled = false
+symbol = ''
+style = 'color_shlvl'
+format = '[ $symbol$shlvl]($style)'
 
 
 [username]
 disabled = false
-style_root = 'bright-yellow'
+style_user = 'bold color_user'
+style_root = 'bold bright-yellow'
 format = '[ $user]($style)'
 aliases = { 'Administrator' = '󰢏 ' }
 
 
 [hostname]
 disabled = false
-ssh_symbol = ' '
+ssh_symbol = '󰌗 '
 style = 'color_ssh'
 format = '[@$hostname]($style)'
 
@@ -195,7 +249,9 @@ truncation_symbol = '…/'
 
 [fill]
 # disabled = true
-symbol = '    '
+# '    '
+symbol = '    '
+style = 'color_fill'
 
 
 # Programming Languages
@@ -500,13 +556,6 @@ format = '[ $symbol$environment]($style)'
 
 # Containers
 
-[shlvl]
-disabled = true
-symbol = '󰹹 '
-style = 'color_shlvl'
-format = '[ $symbol$shlvl]($style)'
-
-
 [docker_context]
 disabled = false
 symbol = ' '
@@ -588,7 +637,7 @@ format = '[ $symbol$channel]($style)'
 
 [cmd_duration]
 disabled = false
-style = 'color_time'
+style = 'color_duration'
 format = '[ 󰚭 $duration]($style)'
 
 [time]
@@ -621,6 +670,9 @@ format = '[$indicator ]($style)'
 [character]
 disabled = false
 format = '$symbol '
-success_symbol = '[ ](color_ultra_violet)'
+success_symbol = '[ ](color_character)'
 error_symbol = '[ ](red)'
-
+vimcmd_symbol = '[󰺕 ](color_character)' # 
+vimcmd_replace_one_symbol = '[󰪥 ](purple)'
+vimcmd_replace_symbol = '[󰪥 ](purple)'
+vimcmd_visual_symbol = '[󰮕 ](yellow)'
