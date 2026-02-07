@@ -16,19 +16,23 @@ endif
 
 # Begin plugin section
 plug#begin()
-  Plug 'menisadi/kanagawa.vim'     # Kanagawa colorscheme
+  # Plug 'menisadi/kanagawa.vim'     # Kanagawa colorscheme
+  Plug 'catppuccin/vim', { 'as': 'catppuccin' } # Catppuccin colorscheme
   Plug 'tpope/vim-commentary'      # Enables gc keymap for commenting
   Plug 'tpope/vim-surround'        # Surround text objects easily
   Plug 'tpope/vim-repeat'          # Allows repeating plugin actions with .
   Plug 'vim-airline/vim-airline'   # Statusline enhancement
   Plug 'vim-airline/vim-airline-themes' # Airline themes
   Plug 'frazrepo/vim-rainbow'      # Rainbow parentheses
+  Plug 'jasonccox/vim-wayland-clipboard' # wayland clipboard
 plug#end()
 
 #==============================
 # Airline Setup
 #==============================
-g:airline_theme = 'deus'                         # Airline theme
+# g:airline_theme = 'deus'                         # Airline theme
+# g:airline_theme = 'catppuccin_frappe'
+g:airline_theme = 'catppuccin_macchiato'
 g:airline#extensions#tabline#enabled = 1          # Enable tabline in airline
 if !exists('g:airline_symbols')
   g:airline_symbols = {}
@@ -54,7 +58,8 @@ set termencoding=utf-8            # Terminal uses UTF-8
 set history=1000                  # Command history length
 set autoread                      # Auto reload files changed outside Vim
 set hidden                        # Allow hidden buffers
-set clipboard=unnamed,unnamedplus,autoselect,autoselectplus # Integrate system clipboard
+set clipboard=unnamed,unnamedplus # Linux
+# set clipboard=unnamed,unnamedplus,autoselect,autoselectplus # Mac, Win
 
 # Enable mouse support if available
 if has('mouse')
@@ -133,7 +138,8 @@ set background=dark               # Dark theme mode
 if has('termguicolors')
   set termguicolors               # Enable 24-bit color in terminal
 endif
-colorscheme kanagawa              # Apply Kanagawa colorscheme
+# colorscheme kanagawa
+colorscheme catppuccin_macchiato
 
 #==============================
 # Key Mappings (Safe Defaults)
