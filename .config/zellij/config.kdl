@@ -269,7 +269,7 @@ plugins {
     welcome-screen location="zellij:session-manager" {
         welcome_screen true
     }
-    zj-quit location="https://github.com/cristiand391/zj-quit/releases/download/0.3.1/zj-quit.wasm" {
+    zj-quit location="https://github.com/cristiand391/zj-quit/releases/latest/download/zj-quit.wasm" {
         cancel_key "n"
         confirm_key "q"
     }
@@ -305,7 +305,7 @@ web_client {
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
 // 
-// default_shell "fish"
+default_shell "zsh"
  
 // Choose the path to override cwd that zellij will use for opening new panes
 // 
