@@ -1,0 +1,25 @@
+# Example contents of .stow-local-ignore
+# Comments and blank lines are allowed.
+
+# Ignore macOS specific files
+\.DS_Store
+
+# Ignore a directory named "secrets" in any package
+^/secrets.*
+
+# You may also want to include the default ignores if you're overriding the defaults:
+# RCS
+# \.+,v
+# CVS
+# \.\#.+ # CVS conflict files / emacs lock files
+# \.cvsignore
+# \.svn
+# _darcs
+# \.hg
+\.git
+# \.gitignore
+# .+~ # emacs backup files
+# \#.*\# # emacs autosave files
+# ^/README.*
+# ^/LICENSE.*
+# ^/COPYING.
