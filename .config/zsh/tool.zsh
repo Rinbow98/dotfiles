@@ -15,6 +15,9 @@ tool_init() {
   fi
 }
 
+# linuxbrew
+tool_init /home/linuxbrew/.linuxbrew/bin/brew 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"'
+
 # Prompt
 tool_init starship 'eval "$(starship init zsh)"'
 
