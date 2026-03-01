@@ -251,7 +251,8 @@ truncation_symbol = '…/'
 [fill]
 # disabled = true
 # '    '
-symbol = '    '
+# ' · '
+symbol = ' · '
 style = 'color_fill'
 
 
