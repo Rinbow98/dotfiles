@@ -27,13 +27,9 @@ startup_mode = "Windowed"
 columns = 128
 lines = 32
 
-# [window.padding]
-# x = 2
-# y = 2
-
 
 [font]
-size = 12.0
+size = 14.0
 
 [font.normal]
 family = "Maple Mono NF CN"
