@@ -12,10 +12,15 @@ warn_missing() {
   print -P "%F{yellow}⚠ missing:%f $key"
 }
 
+# usage:
+#   run_cmd <cmd> <init command...>
+run_cmd() {
+  local cmd="$1"
+  shift
 
-# Show system info
-
-show_macchina() {
-  command -v macchina >/dev/null 2>&1 || return
-  macchina -t astatine
+  if command -v "$cmd" >/dev/null 2>&1; then
+    eval "$@"
+  else
+    warn_missing "$cmd"
+  fi
 }

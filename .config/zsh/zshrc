@@ -13,5 +13,5 @@ source "$ZSH_CONFIG/keybind.zsh"
 source "$ZSH_CONFIG/plugin.zsh"
 source "$ZSH_CONFIG/tool.zsh"
 
-# Show system info at shell startup (optional)
-show_macchina
+# Show system info at shell startup
+run_cmd fastfetch fastfetch
