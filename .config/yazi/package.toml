@@ -3,5 +3,5 @@ deps = []
 
 [[flavor.deps]]
 use = "marcosvnmelo/kanagawa-dragon"
-rev = "4905527"
-hash = "5fd7aa0bf4e7d9753ad8a4660a6eb94f"
+rev = "b433f4a"
+hash = "b967c24a30350b1c5cd3a2ad5a7732e7"
