@@ -543,6 +543,11 @@ Description="鍵盤 - 波蘭語 - Polish (lefty)"
 Language=pl
 Label="pl (lefty)"
 
+[keyboard-pl-slaviature]
+Description="鍵盤 - 波蘭語 - Polish (Slavistic Phonetic Alphabet)"
+Language=pl
+Label="pl (slaviature)"
+
 [keyboard-trans]
 Description="鍵盤 - International Phonetic Alphabet"
 Language=
