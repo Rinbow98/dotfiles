@@ -262,37 +262,37 @@ style = 'color_fill'
 # disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [cmake]
 # disabled = true
 symbol = '󰔷 '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [cobol]
 disabled = true
 symbol = '󱋾 '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [daml]
 disabled = true
 symbol = '󰲇 '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [dart]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [deno]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [dotnet]
 disabled = true
@@ -310,97 +310,97 @@ format = '[ $symbol($version \(OTP $otp_version\))]($style)'
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [erlang]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [fennel]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [gleam]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [golang]
 # disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [guix_shell]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [haskell]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [haxe]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [helm]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [java]
 # disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [julia]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [kotlin]
 # disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [gradle]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [lua]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [nim]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [nodejs]
 # disabled = true
 symbol = '󰎙 '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [ocaml]
 disabled = true
@@ -412,19 +412,19 @@ format = '[ $symbol($version)(\($switch_indicator$switch_name\))]($style)'
 disabled = true
 symbol = 'OPA '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [perl]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [php]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [pulumi]
 disabled = true
@@ -436,19 +436,19 @@ format = '[ $symbol($username@)$stack]($style)'
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [python]
 # disabled = true
 symbol = '󰌠 '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [quarto]
 disabled = true
 symbol = '⨁ '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [raku]
 disabled = true
@@ -460,37 +460,37 @@ format = '[ $symbol($version-$vm_version)]($style)'
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [ruby]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [rust]
 # disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [scala]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [solidity]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [swift]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [terraform]
 disabled = true
@@ -502,25 +502,25 @@ format = '[ $symbol($version)$workspace]($style)'
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [vlang]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [vagrant]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [zig]
 disabled = true
 symbol = ' '
 style = 'color_program_language'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 
 # Package Managers
@@ -529,7 +529,7 @@ format = '[ $symbol($version)]($style)'
 disabled = true
 symbol = '󰚉 '
 style = 'color_package_manager'
-format = '[ $symbol($version)]($style)'
+format = '[( $symbol$version)]($style)'
 
 [nix_shell]
 disabled = true
@@ -606,12 +606,14 @@ format = '[ $symbol$branch]($style)'
 
 [git_commit]
 disabled = false
-only_detached = false 
+only_detached = true
+tag_disabled = false
+tag_symbol = '  '
 style = 'color_version_control'
-format = '[ $hash]($style)'
+format = '[ $hash$tag]($style)'
 
 [git_state]
-disabled = false
+disabled = true
 style = 'color_version_control'
 format = '[ \($state( $progress_current/$progress_total)]\)]($style)'
 
@@ -624,11 +626,13 @@ disabled = false
 style = 'color_version_control'
 format = '[( $all_status$ahead_behind)]($style)'
 
+
 [hg_branch]
 disabled = true
 symbol = ' '
 style = 'color_version_control'
 format = '[ $symbol$branch(:$topic)]($style) '
+
 
 [pijul_channel]
 disabled = true
