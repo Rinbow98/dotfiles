@@ -16,8 +16,8 @@ endif
 
 # Begin plugin section
 plug#begin()
-  # Plug 'menisadi/kanagawa.vim'     # Kanagawa colorscheme
-  Plug 'catppuccin/vim', { 'as': 'catppuccin' } # Catppuccin colorscheme
+  Plug 'menisadi/kanagawa.vim'     # Kanagawa colorscheme
+  # Plug 'catppuccin/vim', { 'as': 'catppuccin' } # Catppuccin colorscheme
   Plug 'tpope/vim-commentary'      # Enables gc keymap for commenting
   Plug 'tpope/vim-surround'        # Surround text objects easily
   Plug 'tpope/vim-repeat'          # Allows repeating plugin actions with .
@@ -30,9 +30,9 @@ plug#end()
 #==============================
 # Airline Setup
 #==============================
-# g:airline_theme = 'deus'                         # Airline theme
+g:airline_theme = 'deus'                         # Airline theme
 # g:airline_theme = 'catppuccin_frappe'
-g:airline_theme = 'catppuccin_macchiato'
+# g:airline_theme = 'catppuccin_macchiato'
 g:airline#extensions#tabline#enabled = 1          # Enable tabline in airline
 if !exists('g:airline_symbols')
   g:airline_symbols = {}
@@ -138,8 +138,8 @@ set background=dark               # Dark theme mode
 if has('termguicolors')
   set termguicolors               # Enable 24-bit color in terminal
 endif
-# colorscheme kanagawa
-colorscheme catppuccin_macchiato
+colorscheme kanagawa
+# colorscheme catppuccin_macchiato
 
 #==============================
 # Key Mappings (Safe Defaults)
