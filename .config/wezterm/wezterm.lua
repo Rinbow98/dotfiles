@@ -1,61 +1,61 @@
 local wezterm = require("wezterm")
-local act = wezterm.action
-local mux = wezterm.mux
-local launch_menu = {}
-local keys = {}
 
 wezterm.on("gui-startup", function(cmd)
-	local tab, pane, window = mux.spawn_window(cmd or {})
+	local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
 	window:gui_window():maximize()
 end)
 
-table.insert(keys, {
-	key = "n",
-	mods = "CTRL|SHIFT",
-	action = act.ShowLauncher,
-})
-
-for i = 1, 8 do
-	-- ALT + number to activate that tab
-	table.insert(keys, {
-		key = tostring(i),
-		mods = "CTRL",
-		action = act.ActivateTab(i - 1),
-	})
-end
-table.insert(keys, {
-	key = " ",
-	mods = "CTRL|SHIFT",
-	action = act.ActivateTabRelative(-1),
-})
-table.insert(keys, {
-	key = " ",
-	mods = "CTRL",
-	action = act.ActivateTabRelative(1),
-})
 
 return {
 	default_prog = { "zsh" },
-	launch_menu = launch_menu,
-
-	keys = keys,
 
 	automatically_reload_config = true,
 
-	window_close_confirmation = "NeverPrompt",
-	window_decorations = "RESIZE",
+  color_scheme = "Catppuccin Frappe",
+  colors = { background = "black" },
 
-	enable_tab_bar = true,
+	enable_tab_bar = false,
 	font = wezterm.font_with_fallback({ "Maple Mono NF CN", "Noto Sans Mono", "NanumGothicCoding" }),
-	font_size = 16,
+	font_size = 14,
 	default_cursor_style = "BlinkingBar",
 
 	window_background_opacity = 0.7,
+  kde_window_background_blur = true,
+	
+	-- window_close_confirmation = "NeverPrompt",
+	window_decorations = "NONE",
+	-- window_decorations = "RESIZE",
 
 	window_padding = {
-		left = 0,
-		right = 0,
-		top = 0,
-		bottom = 0,
+		left = 6,
+		right = 6,
+		top = 6,
+		bottom = 6,
 	},
+
+  enable_scroll_bar = true,
+	-- alternate_buffer_wheel_scroll_speed = 1,
+
+	mouse_bindings = {
+	  {
+	    event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+	    mods = 'NONE',
+	    action = wezterm.action.ScrollByLine(-2),
+	  },
+	  {
+	    event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+	    mods = 'NONE',
+	    action = wezterm.action.ScrollByLine(2),
+	  },
+	  {
+	    event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+	    mods = 'SHIFT',
+	    action = wezterm.action.SendKey {key = 'UpArrow', mods= 'NONE'},
+	  },
+	  {
+	    event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+	    mods = 'SHIFT',
+	    action = wezterm.action.SendKey {key = 'DownArrow', mods= 'NONE'},
+	  },
+	}
 }
