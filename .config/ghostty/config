@@ -66,3 +66,5 @@ command = "zsh"
 
 mouse-scroll-multiplier = 0.5
 
+custom-shader = ./shaders/cursor_warp.glsl
+custom-shader = ./shaders/ripple_rectangle_cursor.glsl
