@@ -17,9 +17,9 @@
 # _darcs
 # \.hg
 \.git
-# \.gitignore
+\.gitignore
 # .+~ # emacs backup files
 # \#.*\# # emacs autosave files
-# ^/README.*
-# ^/LICENSE.*
+^/README.*
+^/LICENSE.*
 # ^/COPYING.
